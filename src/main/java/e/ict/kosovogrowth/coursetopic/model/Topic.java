@@ -1,7 +1,4 @@
 package e.ict.kosovogrowth.coursetopic.model;
-//model ose entity package
-
-
 import java.time.LocalDate;
 
 public class Topic {
