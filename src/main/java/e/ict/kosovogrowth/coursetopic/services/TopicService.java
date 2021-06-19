@@ -14,9 +14,9 @@ public class TopicService {
     public TopicService() {
         Topic topic1 = new Topic(1, "Programming in Java", "Learn Java...", true,
                 LocalDate.now());
-        Topic topic2 = new Topic(1, "Programming in Android", "Learn Android...", true,
+        Topic topic2 = new Topic(2, "Programming in Android", "Learn Android...", true,
                 LocalDate.now());
-        Topic topic3 = new Topic(1, "Programming in Web", "Learn Web...", true,
+        Topic topic3 = new Topic(3, "Programming in Web", "Learn Web...", true,
                 LocalDate.now());
 
         topics.add(topic1);
@@ -26,6 +26,11 @@ public class TopicService {
 
     public List<Topic> getTopics() {
         return topics;
+    }
+
+    public Topic getTopic(int topicId) {
+        Topic topic = topics.stream().filter(t -> t.getId() == topicId).findFirst().orElse(null);
+        return topic;
     }
 
 }
