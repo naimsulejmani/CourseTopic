@@ -33,4 +33,24 @@ public class TopicService {
         return topic;
     }
 
+    public Topic createTopic(Topic topic) {
+        topics.add(topic);
+        return topic;
+    }
+
+    public Topic updateTopic(Topic topic) {
+        Topic updatedTopic = getTopic(topic.getId());
+        int index = topics.indexOf(updatedTopic);
+        topics.set(index, topic);
+        return topic;
+    }
+
+    public Topic deleteTopic(int topicId) {
+        Topic deletedTopic = getTopic(topicId);
+        int index = topics.indexOf(deletedTopic);
+        topics.remove(index);
+        return deletedTopic;
+    }
+
+
 }
