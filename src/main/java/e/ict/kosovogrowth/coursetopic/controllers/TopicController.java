@@ -19,24 +19,28 @@ public class TopicController {
     }
 
     //URL dhe METODE
+    //GET http://localhost:8080/topics
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Topic> getAllTopics() {
         //dhe me lidhe me sherbime
         return service.getTopics();
     }
 
+    //GET http://localhost:8080/topics/4
     //@RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @GetMapping(value = "/{id}")
     public Topic getTopic(@PathVariable int id) {
         return service.getTopic(id);
     }
-
+    //POST http://localhost:8080/topics
     //@RequestMapping(value = "", method = RequestMethod.POST)
     @PostMapping(value = "")
     public Topic createTopic(@RequestBody Topic topic) {
         return service.createTopic(topic);
     }
 
+
+    //PUT http://localhost:8080/topics/1
     //@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @PutMapping("/{id}")
     public Topic updateTopic(@PathVariable int id, @RequestBody Topic topic) {
@@ -45,7 +49,7 @@ public class TopicController {
         }
         return null;
     }
-
+    //DELETE http://localhost:8080/topics/1
     //@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @DeleteMapping("/{id}")
     public Topic deleteTopic(@PathVariable int id) {
