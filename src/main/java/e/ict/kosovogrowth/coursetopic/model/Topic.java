@@ -1,9 +1,18 @@
 package e.ict.kosovogrowth.coursetopic.model;
+import javax.persistence.*;
 import java.time.LocalDate;
-
+//TABELA - CLASS
+@Entity
 public class Topic {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "TOPIC_ID")
+    private int id;//autoincrement - identitet
+
+
+    @Column(name = "TOPIC_NAME", length = 50, unique = true)
     private String name;
+    @Column(name = "TOPIC_DESCRIPTION", length = 2000)
     private String description;
     private boolean isActive;
     private LocalDate registrationDate;
