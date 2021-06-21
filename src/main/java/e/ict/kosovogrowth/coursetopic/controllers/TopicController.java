@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//@CrossOrigin(origins = "https://e.ict.kosovo.growth")
 //http://localhost:8080/topcis/1
 @RestController
 @RequestMapping(value = "topics")
