@@ -1,6 +1,8 @@
 package e.ict.kosovogrowth.coursetopic.model;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+
 //TABELA - CLASS
 @Entity
 public class Topic {
@@ -16,6 +18,9 @@ public class Topic {
     private String description;
     private boolean isActive;
     private LocalDate registrationDate;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Course> courses;
 
     public Topic() {
 
