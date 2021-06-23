@@ -5,6 +5,7 @@ import java.util.List;
 
 //TABELA - CLASS
 @Entity
+@Table(name = "TOPIC_TABLE")
 public class Topic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +20,7 @@ public class Topic {
     private boolean isActive;
     private LocalDate registrationDate;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "topic")
     private List<Course> courses;
 
     public Topic() {
